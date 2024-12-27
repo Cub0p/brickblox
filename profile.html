@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ username }}
+{% endblock %}
+
+{% block head %}
+    {{ username }}
+{% endblock %}
+
+{% block main %}
+    <div class="profile-body">
+        <img alt="scratch cat" src="/static/cat.png" style="float: left; padding: 10px;">
+        <div class="blurb" style="clear: both;">Avatars coming soon...</div>
+    </div>
+    <div class="profile-body footer row">
+        <div class="column">
+            User ID
+            <br>
+            {{ user_id }}
+        </div>
+        <div class="column">
+            Join Date
+            <br>
+            {{ join_date }}
+        </div>
+    </div>
+{% endblock %}
