@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block head %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="form-body">
+        Nothing to see here yet! Check out your profile <a href="/profile/{{ session['user_id'] }}">here</a>!
+
+        <div class="settings-body" style="margin-top: 10px;">
+            Roadmap:
+            <ul style="list-style-type: none;">
+                <li>Catalog</li>
+                <li>Avatars</li>
+                <li>Improved UI</li>
+                <li>Homepage</li>
+                <li>Forums</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

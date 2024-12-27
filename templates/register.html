@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block head %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-body label-left">
+            <label for="inputBirth" class="form-label">Birthday</label>
+            <div class="mb-4">
+                <select name="month" class="form-select mb-2">
+                    <option disabled selected value="">Month</option>
+                    {% for month in range(months | length) %}
+                        <option value="{{ month + 1 }}">{{ months[month] }}</option>
+                    {% endfor %}
+                </select>
+                <select name="day" class="form-select mb-2">
+                    <option disabled selected value="">Day</option>
+                    {% for day in days %}
+                        <option value="{{ day }}">{{ day }}</option>
+                    {% endfor %}
+                </select>
+                <select name="year" class="form-select mb-2">
+                    <option disabled selected value="">Year</option>
+                    {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <label for="inputUsername" class="form-label">How should others call you?</label>
+            <div class="mb-4">
+                <input autocomplete="off" autofocus type="text" id="inputUsername" name="username" class="form-control" placeholder="Username:">
+                <div class="blurb">Username should be between 3-20 characters long!</div>
+            </div>
+            <hr>
+            <label for="inputPassword" class="form-label">Password</label>
+            <div class="mb-4">
+                <input autocomplete="off" autofocus type="password" id="inputPassword" name="password" class="form-control" placeholder="Password:">
+                <div class="blurb">Password should be between 8-20 characters!</div>
+            </div>
+            <div class="mb-4">
+                <input autocomplete="off" autofocus type="password" name="confirmation" class="form-control" placeholder="Confirm Password:">
+            </div>
+            <hr>
+            <label for="inputEmail" class="form-label">Email</label>
+            <div class="mb-4">
+                <input autocomplete="off" autofocus type="email" name="email" id="inputEmail" class="form-control" placeholder="Email:" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+        </div>
+    </form>
+{% endblock %}

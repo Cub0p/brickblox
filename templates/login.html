@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block head %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-body">
+            <label for="inputUsername" class="form-label">Username:</label>
+            <div class="mb-4">
+                <input autocomplete="off" autofocus type="text" id="inputUsername" name="username" class="form-control mx-auto w-auto" placeholder="Username:">
+            </div>
+            <label for="inputPassword" class="form-label align-left">Password:</label>
+            <div class="mb-1">
+                <input autocomplete="off" autofocus type="password" id="inputPassword" name="password" class="form-control mx-auto w-auto" placeholder="Password:">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">
+                Login
+            </button>
+        </div>
+    </form>
+{% endblock %}
